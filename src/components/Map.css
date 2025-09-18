@@ -1,0 +1,46 @@
+.info-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 350px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.button-row button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #00bcd4;
+  color: white;
+  font-weight: bold;
+}
+
+.panel-content {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.close-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: crimson;
+  color: white;
+  font-weight: bold;
+}

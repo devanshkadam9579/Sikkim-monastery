@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sikkim Monastery Travel Website Design System 
+Spiritual colors inspired by Tibetan Buddhism and Himalayan landscapes
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - warm whites and deep earth tones */
+    --background: 30 20% 98%;
+    --foreground: 25 15% 15%;
+
+    /* Card colors - soft cream with warm undertones */
+    --card: 30 30% 96%;
+    --card-foreground: 25 15% 15%;
+
+    /* Popover colors */
+    --popover: 30 30% 96%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Primary - Deep maroon inspired by monastery robes */
+    --primary: 0 65% 35%;
+    --primary-foreground: 30 20% 98%;
+
+    /* Secondary - Warm gold like prayer flags */
+    --secondary: 45 85% 70%;
+    --secondary-foreground: 25 15% 15%;
+
+    /* Muted - Soft sage green like mountain mist */
+    --muted: 120 15% 90%;
+    --muted-foreground: 120 10% 45%;
+
+    /* Accent - Tibetan blue like clear mountain sky */
+    --accent: 200 80% 55%;
+    --accent-foreground: 30 20% 98%;
+
+    /* Destructive colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 20% 98%;
+
+    /* Border and input */
+    --border: 120 15% 85%;
+    --input: 120 15% 85%;
+    --ring: 0 65% 35%;
+
+    /* Monastery-inspired gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(200 80% 55%), hsl(25 65% 45%));
+    --gradient-prayer: linear-gradient(90deg, hsl(45 85% 70%), hsl(35 75% 65%), hsl(25 65% 60%));
+    --gradient-mountain: linear-gradient(180deg, hsl(200 30% 95%), hsl(120 15% 90%));
+    
+    /* Spiritual shadows with prayer flag colors */
+    --shadow-monastery: 0 10px 40px -10px hsl(0 65% 35% / 0.3);
+    --shadow-prayer: 0 8px 32px -8px hsl(45 85% 70% / 0.4);
+    --shadow-mountain: 0 20px 60px -20px hsl(200 80% 55% / 0.2);
+
+    /* Animations */
+    --transition-monastery: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-prayer: all 0.3s ease-in-out;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - deep monastery night colors */
+    --background: 25 20% 8%;
+    --foreground: 30 20% 95%;
+
+    --card: 25 25% 12%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 25 25% 12%;
+    --popover-foreground: 30 20% 95%;
+
+    /* Primary - Bright prayer flag red for dark mode */
+    --primary: 0 75% 55%;
+    --primary-foreground: 30 20% 95%;
+
+    /* Secondary - Golden prayer flag */
+    --secondary: 45 80% 60%;
+    --secondary-foreground: 25 20% 8%;
+
+    /* Muted - Dark mountain mist */
+    --muted: 120 10% 20%;
+    --muted-foreground: 120 8% 65%;
+
+    /* Accent - Bright monastery blue */
+    --accent: 200 85% 65%;
+    --accent-foreground: 25 20% 8%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 30 20% 95%;
+
+    --border: 120 10% 25%;
+    --input: 120 10% 25%;
+    --ring: 0 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  /* Monastery-inspired typography */
+  .text-monastery-xl {
+    @apply text-6xl lg:text-8xl font-black tracking-tight font-oswald;
+    text-shadow: 2px 2px 4px hsl(var(--foreground) / 0.1);
+  }
+
+  .text-monastery-hero {
+    @apply text-4xl lg:text-6xl font-bold tracking-wide font-oswald;
+  }
+
+  .text-monastery-section {
+    @apply text-2xl lg:text-4xl font-bold tracking-wide font-oswald;
+  }
+
+  /* Spiritual button styles */
+  .btn-monastery {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+
+  .btn-prayer {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
+  }
+
+  .btn-mountain {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
+  }
+
+  /* Card styles */
+  .card-monastery {
+    @apply bg-card text-card-foreground rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-102 border border-border/50;
+  }
+
+  /* Prayer flag animation */
+  @keyframes prayer-wave {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-2px) rotate(1deg); }
+    75% { transform: translateY(2px) rotate(-1deg); }
+  }
+
+  .prayer-flag {
+    animation: prayer-wave 3s ease-in-out infinite;
+  }
+
+  /* Monastery fade-in animation */
+  @keyframes monastery-fade {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  .monastery-fade {
+    animation: monastery-fade 0.8s ease-out forwards;
+  }
+
+  /* Smooth scale utility */
+  .hover-scale-102 {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale-102:hover {
+    transform: scale(1.02);
+  }
+}
