@@ -399,3 +399,4 @@ Thank you for supporting Sikkim's cultural heritage!
     </Dialog>
   );
 };
+
